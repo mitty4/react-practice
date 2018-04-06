@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-
-
-
+import './test.css';
 
 export default class Test extends Component{
-
   handleChange(e) {
     const arg = e.target.value;
     this.props.changeArg(arg);
@@ -13,14 +10,21 @@ export default class Test extends Component{
 
   render(){
     return(
-      <div>
-        <h1> hellooooooo {this.props.blah} </h1>
-        <input onChange = {this.handleChange.bind(this)} />
-        <p>
-            {this.props.arg || "chocolate"}
-        </p>
+      <div className = "test">
+
+        <h1>{this.props.blah} </h1>
+
+        <input
+          placeHolder = "type here"
+          onChange = {this.handleChange.bind(this)}
+        />
+
+        <p>{this.props.arg || "Ill brb"}</p>
+
       </div>
     )
   }
+
+
 
 }
